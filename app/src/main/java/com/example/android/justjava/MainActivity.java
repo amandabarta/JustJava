@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Creates an order summary.
-     * 
+     *
      * @param price
      * @return text summary
      */
     private String createOrderSummary (int price) {
         String messagePrice = "Name: " + " Kaptain Kunal";
         messagePrice = messagePrice + "\nQuantity: " + quantity;
-        messagePrice = "\nTotal: $" + price;
+        messagePrice = messagePrice + "\nTotal: $" + price;
         messagePrice = messagePrice + "\nThank you!";
         return messagePrice;
     }
@@ -87,18 +87,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 }
