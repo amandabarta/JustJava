@@ -34,17 +34,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-        createOrderSummary ();
-
+        String messagePrice = createOrderSummary (price);
+        displayMessage(messagePrice);
     }
 
     /**
-     * This method creates an order summary.
+     * Creates an order summary.
+     * 
+     * @param price
+     * @return text summary
      */
-    public void createOrderSummary () {
-        String messagePrice = "Name: " + " Kaptain Kunal" + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice();
+    private String createOrderSummary (int price) {
+        String messagePrice = "Name: " + " Kaptain Kunal";
+        messagePrice = messagePrice + "\nQuantity: " + quantity;
+        messagePrice = "\nTotal: $" + price;
         messagePrice = messagePrice + "\nThank you!";
-        displayMessage(messagePrice);
+        return messagePrice;
     }
 
     /**
